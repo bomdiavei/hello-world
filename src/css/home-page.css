@@ -1,0 +1,33 @@
+body {
+    color: F5F5F5
+}
+
+.nav-button-secondary {
+    display: flex;
+    margin-right: 74;
+    margin-top: 8;
+    margin-bottom: 8;
+    margin-left: 8;
+    justify-content: flex-end;
+}
+
+.nav-components {
+    display: flex;
+    margin: 8;
+    justify-content: flex-end;
+}
+
+.filter-component {
+    width: 403;
+    height: 988;
+}
+
+.filters {
+    width: 403;    
+    height: 205;
+}
+
+.card {
+    width: 344;
+    height: 317;
+}
