@@ -1,10 +1,8 @@
-import React, {Component} from 'react';
 import Avatar from '@material-ui/core/Avatar';
+import React from 'react';
 
-export default class AvatarIcon extends Component {
-    render(){
-        return (
-        <Avatar>{this.props.label}</Avatar>                                                                     
-        );
-    }
+export default function AvatarIcon(props) {
+  return (
+    <Avatar>{props.label}</Avatar>  
+  );
 }

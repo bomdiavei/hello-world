@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -8,38 +9,65 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import DogPic from '../dog.jpg'
 
-export default class Cards extends Component {
+const useStyles = makeStyles({
+    card: {
+        maxWidth: 345,
+        maxHeight: 317,
+    },
+    media: {
+        height: 140,
+    },
+    typography: {
+        textAlign: "left",
+    },
+    parent: {
+        position: "relative",
+    },
+    statusBackground: {
+        fontWeight: "bold",
+        color: "white",
+        fontSize: 14,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: 25,
+        width: 100,
+        position: "absolute",
+        backgroundImage: "linear-gradient(rgba(255,0,0,1), rgba(255,0,0,0));",
+    },
+});
 
-    render() {
+export default function Cards(props) {
+    const classes = useStyles();
 
-        return (
-            <Card>
-                <CardActionArea>
+    return (
+        <Card className={classes.card}>
+            <CardActionArea>
+                <div className={classes.parent} >
+                    <div className={classes.statusBackground}>Desaparecido</div>
                     <CardMedia
-                        component="img"
-                        alt="Contemplative Reptile"
-                        height="140"
+                        className={classes.media}
                         image={DogPic}
-                        title="Contemplative Reptile"
+                        title="Contemplative Pet"
                     />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {this.props.petName}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            {this.props.description}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button size="small" color="primary">
-                        Compartilhar
-                    </Button>
-                    <Button size="small" color="primary">
-                        Saiba Mais
-                    </Button>
-                </CardActions>
-            </Card>
-        );
-    }
+                </div>
+            </CardActionArea>
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="h2" className={classes.typography}>
+                    {props.petName}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    {props.description}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="small" color="primary">
+                    Compartilhar
+                </Button>
+                <Button size="small" color="primary">
+                    Saiba Mais
+                </Button>
+            </CardActions>
+        </Card>
+    );
 }

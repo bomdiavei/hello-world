@@ -1,19 +1,33 @@
-import React, { Component } from 'react';
-import Toolbar from '@material-ui/core/Toolbar';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import ButtonPrimary from './ButtonPrimary';
-import ButtonSecondary from './ButtonSecondary';
-import '../css/home-page.css';
+import Toolbar from '@material-ui/core/Toolbar';
+import ButtonComponent from './ButtonComponent';
 
-export default class AppBarNotLoggedIn extends Component {
-    render() {
-        return (
+const useStyles = makeStyles(theme => ({
+    root: {
+        flexGrow: 1,
+    },
+    components: {
+        '& > *': {
+          margin: theme.spacing(1),
+        },
+        display: "flex",
+        justifyContent: "flex-end"
+    },
+}));
+
+export default function ButtonAppBar() {
+    const classes = useStyles();
+
+    return (
+        <div className={classes.root}>
             <AppBar position="static">
-                <Toolbar>
-                    <ButtonPrimary label="Entrar" type="submit" />
-                    <ButtonSecondary label="Cadastrar" type="submit" classname="home-page.nav-button-secondary"/>
+                <Toolbar className={classes.components}>
+                    <ButtonComponent label="Entrar" color="primary" disableElevation="true"/>
+                    <ButtonComponent label="Cadastrar" color="secondary" disableElevation="false"/>
                 </Toolbar>
             </AppBar>
-        );
-    }
+        </div>
+    );
 }

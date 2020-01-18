@@ -1,24 +1,44 @@
-import React, { Component } from 'react';
-import FormControl from '@material-ui/core/FormControl';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-export default class InputLabelSimple extends Component {
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+    width: 370,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
-    render() {
+export default function InputLabelSimple(props) {
+  const classes = useStyles();
+  const [value, setValue] = React.useState('');
+  const handleChange = event => {
+    setValue(event.target.value);
+  };  
+  const valueFunction = props.valueData.map((value) =>
+  <MenuItem key={value.value} value={value.value}>{value.name}</MenuItem>
+);
 
-        return (
-            <FormControl>
-                <InputLabel id="demo-simple-select-label">{this.props.inputLabelValue}</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={this.props.value}
-                    onChange={this.props.onChange}
-                >
-                    {this.props.dataFunction}
-                </Select>
-            </FormControl>
-        );
-    }
+  return (
+    <div>
+      <FormControl className={classes.formControl}>
+  <InputLabel id="demo-simple-select-helper-label">{props.inputLabelValue}</InputLabel>
+        <Select
+          labelId="demo-simple-select-helper-label"
+          id="demo-simple-select-helper"
+          value={value}
+          onChange={handleChange}
+        >
+          {valueFunction}
+        </Select>
+      </FormControl>
+    </div>
+  );
 }

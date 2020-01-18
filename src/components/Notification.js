@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import React from 'react';
+import Badge from '@material-ui/core/Badge';
 
-export default class Notification extends Component {
-    render() {
-        return (
-            <Badge badgeContent={this.props.badgeContent} color="secondary">
-                <NotificationsIcon />
-            </Badge>                                                                       
-        );
-    }
+export default function SimpleBadge(props) {
+  return (
+      <Badge badgeContent={props.badgeContent} color="secondary">
+        <NotificationsIcon />
+      </Badge>
+  );
 }
