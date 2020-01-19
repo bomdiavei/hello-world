@@ -2,7 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import ButtonComponent from './ButtonComponent';
+import LogIn from './LogIn';
+import SignUp from './SignUp';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -24,8 +25,8 @@ export default function ButtonAppBar() {
         <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar className={classes.components}>
-                    <ButtonComponent label="Entrar" color="primary" disableElevation="true"/>
-                    <ButtonComponent label="Cadastrar" color="secondary" disableElevation="false"/>
+                    <LogIn />
+                    <SignUp />
                 </Toolbar>
             </AppBar>
         </div>

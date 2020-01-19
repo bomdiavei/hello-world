@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 
 export default function ContainedButtons(props) {
   return (
-      <Button type="submit" variant="contained" color={props.color} disableElevation={props.disableElevation}>
+      <Button variant={props.variant} color={props.color} onClick={props.onClick}>
         {props.label}
       </Button>   
   );

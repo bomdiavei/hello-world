@@ -37,8 +37,8 @@ function App() {
         <Filters />
         {/* cartoes */}
         <Grid className={classes.cards}>
-          <Cards petName="Rex" description="Fugiu nas mediações do jardim das oliveiras." />
-          <Cards petName="Leão" description="Fugiu nas mediações do trevo da bandeira." />
+          <Cards status="Encontrado" petName="Rex" description="Fugiu nas mediações do jardim das oliveiras." />
+          <Cards status="Desaparecido" petName="Leão" description="Fugiu nas mediações do trevo da bandeira." />
         </Grid>
       </div>
     </div>
