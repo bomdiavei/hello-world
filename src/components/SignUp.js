@@ -42,7 +42,7 @@ export default function FormDialog() {
         <div>
             <ButtonComponent variant="contained" label="Cadastrar" color="secondary" onClick={handleClickOpen} />
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title" className={classes.header}>Bem Vindo</DialogTitle>
+                <DialogTitle id="form-dialog-title" className={classes.header}>Cadastro</DialogTitle>
                 <DialogContent>
                     <TextField
                         color="secondary"

@@ -23,11 +23,11 @@ export default function Filters(props) {
 
     const sexData = [
         {
-            name: "feminino",
+            name: "fêmea",
             value: "f"
         },
         {
-            name: "masculino",
+            name: "macho",
             value: "m"
         },
         {

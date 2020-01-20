@@ -8,6 +8,7 @@ import AppBarNotLoggedIn from './components/AppBarNotLoggedIn';
 import Cards from './components/Cards';
 import Grid from '@material-ui/core/Grid';
 import Filters from './components/Filters'
+import MoreInfo from './components/MoreInfo';
 
 const useStyles = makeStyles(theme => ({
   cards: {
@@ -37,6 +38,7 @@ function App() {
         <Filters />
         {/* cartoes */}
         <Grid className={classes.cards}>
+          <MoreInfo />
           <Cards status="Encontrado" petName="Rex" description="Fugiu nas mediações do jardim das oliveiras." />
           <Cards status="Desaparecido" petName="Leão" description="Fugiu nas mediações do trevo da bandeira." />
         </Grid>
