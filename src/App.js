@@ -8,7 +8,6 @@ import AppBarNotLoggedIn from './components/AppBarNotLoggedIn';
 import Cards from './components/Cards';
 import Grid from '@material-ui/core/Grid';
 import Filters from './components/Filters'
-import MoreInfo from './components/MoreInfo';
 
 const useStyles = makeStyles(theme => ({
   cards: {
@@ -17,7 +16,8 @@ const useStyles = makeStyles(theme => ({
     },
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
+    justifyContent: "space-around",
   },
   filters: {
     display: "flex",
@@ -38,9 +38,9 @@ function App() {
         <Filters />
         {/* cartoes */}
         <Grid className={classes.cards}>
-          <MoreInfo />
-          <Cards status="Encontrado" petName="Rex" description="Fugiu nas mediações do jardim das oliveiras." />
-          <Cards status="Desaparecido" petName="Leão" description="Fugiu nas mediações do trevo da bandeira." />
+          <Cards dogPic="/home/carlos/my-app/src/dog.jpg" owner="Caroline de Oliveira" status="Encontrado" petName="Rex" sexo="Macho" description="Fugiu nas mediações do jardim das oliveiras." />
+          <Cards dogPic="/home/carlos/my-app/src/dog2.jpg" owner="José de Alencar" status="Desaparecido" petName="Leão" sexo="Macho" description="Fugiu nas mediações do trevo da bandeira." />
+          <Cards dogPic="/home/carlos/my-app/src/dog3.jpg" owner="Mateus Barbosa" status="Desaparecido" petName="Dengosa" sexo="Fêmea" description="Fugiu nas mediações do parque das nações." />
         </Grid>
       </div>
     </div>

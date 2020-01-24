@@ -4,19 +4,15 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import VerticalMenu from './VerticalMenu';
-import DogPic from '../dog.jpg'
+import MoreInfo from './MoreInfo';
 
 const useStyles = makeStyles({
     card: {
         maxWidth: 345,
         maxHeight: 317,
-    },
-    media: {
-        height: 140,
     },
     description: {
         whiteSpace: "nowrap",
@@ -72,11 +68,7 @@ export default function Cards(props) {
             <CardActionArea>
                 <div className={classes.parent}>
                     {isMissing()}
-                    <CardMedia
-                        className={classes.media}
-                        image={DogPic}
-                        title="Contemplative Pet"
-                    />
+                    <MoreInfo dogPic={props.dogPic} owner={props.owner} description={props.description} sexo={props.sexo} petName={props.petName} status={props.status} isMissing={isMissing()}/>
                 </div>
             </CardActionArea>
             <CardContent>
@@ -94,9 +86,9 @@ export default function Cards(props) {
                 <Button size="small" color="primary">
                     Compartilhar
                 </Button>
-                <Button size="small" color="primary">
+                {/* <Button size="small" color="primary">
                     Saiba Mais
-                </Button>
+                </Button> */}
             </CardActions>
         </Card>
     );
