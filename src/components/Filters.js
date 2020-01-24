@@ -1,6 +1,6 @@
 import React from 'react';
 import InputLabelSimple from './InputLabelSimple';
-import TextFieldSimple from './TextFieldSimple';
+import SearchTextField from './SearchTextField';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
@@ -53,7 +53,7 @@ export default function Filters(props) {
         <Grid className={classes.grid}>
             <Card className={classes.root}>
                 <CardContent>
-                    <TextFieldSimple label="Nome" />
+                    <SearchTextField label="Nome" />
                 </CardContent>
                 <InputLabelSimple inputLabelValue="Sexo" valueData={sexData} />
                 <InputLabelSimple inputLabelValue="Status" valueData={statusData} />
