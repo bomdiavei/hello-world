@@ -68,7 +68,7 @@ export default function Cards(props) {
             <CardActionArea>
                 <div className={classes.parent}>
                     {isMissing()}
-                    <MoreInfo dogPic={props.dogPic} owner={props.owner} description={props.description} sexo={props.sexo} petName={props.petName} status={props.status} isMissing={isMissing()}/>
+                    <MoreInfo comments={props.comments} dogPic={props.dogPic} ownerPic={props.ownerPic} owner={props.owner} description={props.description} sexo={props.sexo} petName={props.petName} status={props.status} isMissing={isMissing()}/>
                 </div>
             </CardActionArea>
             <CardContent>

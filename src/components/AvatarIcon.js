@@ -14,9 +14,9 @@ export default function AvatarIcon(props) {
   // TODO: does it have a pic or not
   const isSmall = () => {
       if ("small" === props.size) {
-          return <Avatar className={classes.small}>{props.label}</Avatar>;
+          return <Avatar className={classes.small} src={props.src}/>;
       }
-      return <Avatar>{props.label}</Avatar>;
+      return <Avatar src={props.src}/>;
   };
 
   return (
