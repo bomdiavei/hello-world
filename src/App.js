@@ -16,7 +16,6 @@ const useStyles = makeStyles(theme => ({
     },
     display: "flex",
     flexWrap: "wrap",
-    // justifyContent: "space-between",
     justifyContent: "space-around",
   },
   filters: {

@@ -14,9 +14,17 @@ const useStyles = makeStyles(theme => ({
 export default function InputWithIcon(props) {
   const classes = useStyles();
 
+  const [name, setName] = React.useState('');
+  const handleChange = event => {
+    setName(event.target.value);
+    console.log("Filtrando: "+event.target.value);
+  };
+
   return (
     <div>
       <TextField
+        value={name}
+        onChange={handleChange}
         className={classes.margin}
         id="input-with-icon-textfield"
         label={props.label}

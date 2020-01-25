@@ -9,6 +9,9 @@ import ButtonComponent from './ButtonComponent';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import CardMedia from '@material-ui/core/CardMedia';
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from '@material-ui/core/IconButton';
+import VerticalMenu from './VerticalMenu';
 
 const useStyles = makeStyles(theme => ({
     media: {
@@ -140,6 +143,18 @@ const useStyles = makeStyles(theme => ({
     toComment: {
         width: 500,
     },
+    options: {
+        display: "flex",
+        alignSelf: "flex-start",
+        position: "absolute",
+        marginLeft: "auto",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: 96,
+        height: 48,
+    },
 }));
 
 export default function AlertDialog(props) {
@@ -159,7 +174,6 @@ export default function AlertDialog(props) {
 
     const commentFunction = commentData.map((comment) =>
         //TODO: usar atributo 'key' na lista e atribuí-lo um hash
-        //TODO: comment using props
         <div key={comment.pic}>
             <div className={classes.person}>
                 <AvatarIcon src={comment.pic} size="small" />
@@ -206,6 +220,14 @@ export default function AlertDialog(props) {
                     </div>
 
                     <div className={classes.moreInfo}>
+
+                        <div className={classes.options}>
+                            <VerticalMenu />
+                            <IconButton color="primary" onClick={handleClose} >
+                                <CloseIcon />
+                            </IconButton>
+                        </div>
+
                         <DialogContent className={classes.ownerInfo}>
                             <div className={classes.person}>
                                 <AvatarIcon src={props.ownerPic} />
@@ -235,6 +257,8 @@ export default function AlertDialog(props) {
                                     startAdornment: (
                                         <InputAdornment position="start">
                                             <AvatarIcon src="/broken-image.jpg" size="small" />
+                                            {/* TODO: photo of the user */}
+                                            {/* TODO: conditional render, only after loggin */}
                                         </InputAdornment>
                                     ),
                                 }}

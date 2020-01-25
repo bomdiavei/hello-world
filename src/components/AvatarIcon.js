@@ -11,7 +11,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function AvatarIcon(props) {
   const classes = useStyles();
-  // TODO: does it have a pic or not
   const isSmall = () => {
       if ("small" === props.size) {
           return <Avatar className={classes.small} src={props.src}/>;

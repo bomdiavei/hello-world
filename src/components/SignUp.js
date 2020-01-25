@@ -8,6 +8,8 @@ import ButtonComponent from './ButtonComponent';
 import { makeStyles } from '@material-ui/core/styles';
 import Date from './Date';
 import Radio from './Radio';
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles(theme => ({
     header: {
@@ -21,6 +23,18 @@ const useStyles = makeStyles(theme => ({
     },
     link: {
         marginTop: theme.spacing(2),
+    },
+    options: {
+        display: "flex",
+        alignSelf: "flex-start",
+        position: "absolute",
+        marginLeft: "auto",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: 48,
+        height: 48,
     },
 }));
 
@@ -42,6 +56,12 @@ export default function FormDialog() {
         <div>
             <ButtonComponent variant="contained" label="Cadastrar" color="secondary" onClick={handleClickOpen} />
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                <DialogActions className={classes.options}>
+                    <IconButton color="primary" onClick={handleClose} >
+                        <CloseIcon />
+                    </IconButton>
+                </DialogActions>
+
                 <DialogTitle id="form-dialog-title" className={classes.header}>Cadastro</DialogTitle>
                 <DialogContent>
                     <TextField
